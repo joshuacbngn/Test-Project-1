@@ -63,9 +63,10 @@ def main():
     with st.form('input_form'):
         message = st.text_area("What do you want to search?", "How to make lemonade?")
         submit = st.form_submit_button("Send!")
-        if not openai_key.startswith('sk-'):
-            st.warning('Please enter your OpenAI API key!')
-        elif openai_key.startswith('sk-') and submit:
+        # if not openai_key.startswith('sk-'):
+        #     st.warning('Please enter your OpenAI API key!')
+        # elif openai_key.startswith('sk-') and submit:
+        if submit:
             with st.spinner("Fetching search results.."):
                 search_then_gpt(message, openai_key)
 
